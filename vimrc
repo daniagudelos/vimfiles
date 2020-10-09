@@ -15,8 +15,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" Show git diff next to line number
 Plugin 'airblade/vim-gitgutter'
+" Git
 Plugin 'tpope/vim-fugitive'
+" Color
+Plugin 'rakr/vim-one'
+"Plugin 'joshdick/onedark.vim'
+" Syntax highlight
+Plugin 'sheerun/vim-polyglot'
 
 " All plugins must be before this line
 call vundle#end()
@@ -24,6 +31,7 @@ filetype plugin indent on
 
 " Airline: Enable tab line, set formatter, show tabs and buffers, set theme,
 " show when buffer is modified
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_tabs = 1
@@ -44,6 +52,17 @@ set ttyfast
 " Show line numbers
 set number
 set relativenumber
+
+" Enable 256 colors
+set t_Co=256
+colorscheme one
+" Enables cursor line position tracking:
+set cursorline
+" Remove the underline from enabling cursorline:
+highlight clear CursorLine
+" Sets the line numbering to red background:
+highlight CursorLineNR ctermbg=darkyellow ctermfg=White cterm=bold 
+
 " Status bar
 set laststatus=2
 
@@ -70,7 +89,12 @@ set smartcase
 set showmatch
 
 " key bindings
+set mouse=a
+set clipboard=unnamedplus
 nnoremap <tab>   :bnext<CR>
 nnoremap <S-tab>   :bprevious<CR>
 nmap <Space> :
 nmap <c-f> gg=G
+
+" Copy text to system clipboard
+vnoremap <C-c> "+y
