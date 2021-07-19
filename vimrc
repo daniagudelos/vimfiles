@@ -42,7 +42,6 @@ let mapleader="\\"
 set ttyfast
 " Show line numbers
 set number
-set relativenumber
 " Status bar
 set laststatus=2
 
