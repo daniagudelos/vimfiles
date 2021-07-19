@@ -71,6 +71,7 @@ set showmatch
 nnoremap <tab>   :bnext<CR>
 nnoremap <S-tab>   :bprevious<CR>
 nmap <Space> :
+nmap <c-f> gg=G
 
 " Copy text to system clipboard
 vnoremap <C-c> "+y
