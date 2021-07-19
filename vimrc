@@ -1,4 +1,4 @@
-"Daniela Agudelo
+" Daniela Agudelo
 
 " Set compatibility to Vim only
 set nocompatible
@@ -13,19 +13,24 @@ call vundle#begin()
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 Plugin 'VundleVim/Vundle.vim'
+" Status/tabline 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" Show git diff the sign column
 Plugin 'airblade/vim-gitgutter'
+" Display indent levels
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " All plugins must be before this line
 call vundle#end()
 filetype plugin indent on
 
+" vim-indent-guides configuration
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 2
 let g:indent_guides_enable_on_vim_startup = 1
 
+" vim-airline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_tabs = 1
